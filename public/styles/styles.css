@@ -28,3 +28,8 @@ body {
 .section-header{
 	margin-top: 30px;
 }
+
+.noSplit{
+	white-space: nowrap;
+  	overflow: hidden;
+}

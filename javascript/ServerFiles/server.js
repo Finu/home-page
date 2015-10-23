@@ -8,10 +8,12 @@ var Server = function () { };
 Server.prototype.Start = function () {
 	this.setupVariables();
 	this.setupTerminationHandlers();
+	
 	this.app = express()
 	this.app.use(express.static(path.join(__dirname, '../..', 'public')));
-
+	this.app.set('view engine', 'ejs');
 	this.app.use(logger('dev'));
+	
 	/*app.use(function (req, res, next) {
 		var err = new Error('Not Found');
 		err.status = 404;

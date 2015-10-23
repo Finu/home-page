@@ -3,11 +3,8 @@ var path = require('path');
 var router = express.Router();
 
 router.get('/', function(req, res){
-	res.sendFile(path.join(__dirname, '../../..', '/view/index.html'));
-});
-
-router.get('/jobs', function(req, res){
-	res.sendFile(path.join(__dirname, '../../..', '/view/jobs.html'));
+	//res.sendFile(path.join(__dirname, '../../..', '/view/index.html'));
+	res.render(path.join(__dirname, '../../..', '/view/index'));
 });
 
 module.exports = router;

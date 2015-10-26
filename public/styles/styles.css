@@ -33,3 +33,7 @@ body {
 	white-space: nowrap;
   	overflow: hidden;
 }
+
+.project-card{
+	min-height: 150px;	
+}

@@ -1,13 +1,13 @@
 <div class="section mdl-card mdl-shadow--3dp section-header mdl-color--amber-600">
-	<div class="mdl-typography--title mdl-card__title mdl-color-text--white">Skills: </div>
+    <div class="mdl-typography--title mdl-card__title mdl-color-text--white">Skills: </div>
 </div>
 <% skills.forEach(function(skill) { %>
-	<div class="section mdl-card mdl-shadow--2dp">
-		<div class="mdl-typography--title mdl-card__title"><%= skill.title %>:</div>
-		<div class="mdl-card--border mdl-card__actions">
-		<% skill.perks.forEach(function(perk) { %>
-			<span class="perks"><%= perk %></span>	
-		<% }); %>
-		</div>
-	</div>
+      <div class="section mdl-card mdl-shadow--2dp">
+          <div class="mdl-typography--title mdl-card__title"><%= skill.title %>:</div>
+          <div class="mdl-card--border mdl-card__actions">
+          <% skill.perks.forEach(function(perk) { %>
+              <span class="perks"><%= perk %></span>
+          <% }); %>
+        </div>
+    </div>
 <% }); %>

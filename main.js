@@ -1,3 +1,3 @@
-var server = require("./javascript/ServerFiles/server.js");
+var server = require("./javascript/serverFiles/server.js");
 
 server.Start();

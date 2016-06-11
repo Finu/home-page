@@ -2,6 +2,7 @@ var express = require('express');
 var logger = require('morgan');
 var path = require('path');
 
+
 var Server = function () { };
 
 Server.prototype.Start = function () {
@@ -13,12 +14,12 @@ Server.prototype.Start = function () {
     this.app.use(express.static(path.join(__dirname, '../..', 'public')));
     this.app.set('view engine', 'ejs');
     this.app.use(logger('dev'));
-	
-	/*app.use(function (req, res, next) {
-		var err = new Error('Not Found');
-		err.status = 404;
-		next(err);
-	});*/
+
+    /*app.use(function (req, res, next) {
+        var err = new Error('Not Found');
+        err.status = 404;
+        next(err);
+    });*/
 
     if (this.app.get('env') === 'development') {
         this.app.use(function (err, req, res, next) {

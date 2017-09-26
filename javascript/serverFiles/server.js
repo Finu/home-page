@@ -56,6 +56,8 @@ Server.prototype.setupVariables = function () {
     this.ipaddress = '0.0.0.0';
     this.port = 8080;
 
+    console.warn(this.ipaddress);
+    console.warn(this.this.port);
     if (typeof this.ipaddress === "undefined") {
         console.warn('No OPENSHIFT_NODEJS_IP var, using 127.0.0.1');
         this.ipaddress = "127.0.0.1";

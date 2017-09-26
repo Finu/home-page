@@ -51,8 +51,10 @@ Server.prototype.CreateRoutes = function () {
 };
 
 Server.prototype.setupVariables = function () {
-    this.ipaddress = process.env.OPENSHIFT_NODEJS_IP;
-    this.port = process.env.OPENSHIFT_NODEJS_PORT || 8080;
+    // this.ipaddress = process.env.OPENSHIFT_NODEJS_IP;
+    // this.port = process.env.OPENSHIFT_NODEJS_PORT || 8080;
+    this.ipaddress = '0.0.0.0';
+    this.port = 8080;
 
     if (typeof this.ipaddress === "undefined") {
         console.warn('No OPENSHIFT_NODEJS_IP var, using 127.0.0.1');

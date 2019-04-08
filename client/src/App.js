@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import "./App.css";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
@@ -8,12 +7,9 @@ import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import Grid from "@material-ui/core/Grid";
-import SimpleCard from "./test/Card";
+import CompanyCard from "./components/CompanyCard";
 
 const styles = {
-    root: {
-        flexGrow: 1
-    },
     grow: {
         flexGrow: 1
     },
@@ -22,7 +18,8 @@ const styles = {
         marginRight: 20
     },
     grid: {
-        padding: "100px"
+        paddingLeft: "10%",
+        paddingRight: "10%"
     }
 };
 
@@ -54,6 +51,8 @@ class App extends Component {
                     </Toolbar>
                 </AppBar>
                 <Grid
+                    container
+                    className={this.props.classes.grid}
                     item
                     xs={12}
                     container
@@ -62,7 +61,7 @@ class App extends Component {
                     alignItems="stretch"
                 >
                     {this.companies.map(item => (
-                        <SimpleCard key={item.name} company={item} />
+                        <CompanyCard key={item.name} company={item} />
                     ))}
                 </Grid>
             </div>

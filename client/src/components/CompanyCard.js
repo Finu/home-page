@@ -11,14 +11,7 @@ import Typography from "@material-ui/core/Typography";
 const styles = {
     card: {
         minWidth: 275,
-        // marginLeft: 20,
-        marginTop: 20,
-        // marginRight: 20
-    },
-    bullet: {
-        display: "inline-block",
-        margin: "0 2px",
-        transform: "scale(0.8)"
+        marginTop: 20
     }
 };
 
@@ -27,7 +20,7 @@ function SimpleCard(props) {
 
     return (
         <Card className={classes.card}>
-            <CardActionArea>
+            <CardActionArea href={company.url}>
                 <CardHeader
                     avatar={
                         <Avatar
@@ -43,18 +36,17 @@ function SimpleCard(props) {
                         (!!company.dateTo ? company.dateTo : "present")
                     }
                 />
-                <CardContent>
-                    <ul>
+            </CardActionArea>
+
+            <CardContent>
+                <ul>
                     {company.tasks.map(task => (
-                        <li >
-                            <Typography variant="subtitle2">
-                            {task}
-                            </Typography>
+                        <li>
+                            <Typography variant="subtitle2">{task}</Typography>
                         </li>
                     ))}
-                    </ul>
-                </CardContent>
-            </CardActionArea>
+                </ul>
+            </CardContent>
         </Card>
     );
 }
@@ -66,7 +58,8 @@ SimpleCard.propTypes = {
         dateFrom: PropTypes.string.isRequired,
         dateTo: PropTypes.string,
         logo: PropTypes.string.isRequired,
-        task: PropTypes.arrayOf(PropTypes.string)
+        task: PropTypes.arrayOf(PropTypes.string),
+        url: PropTypes.string
     }).isRequired
 };
 
